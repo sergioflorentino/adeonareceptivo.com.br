@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adeona Receptivo | Transfer Recife para Porto de Galinhas & Passeios</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            teal: '#0088A8',
+                            tealDark: '#005F73',
+                            tealLight: '#E0F2FE',
+                            gold: '#EE9B00',
+                            goldLight: '#CA6702',
+                            sand: '#FDF0ED',
+                            dark: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Styles & Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 95, 115, 0.85) 0%, rgba(0, 136, 168, 0.65) 100%);
+        }
+
+        .whatsapp-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body text-slate-700 bg-slate-50 antialiased selection:bg-brand-teal selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div>
+
+                        <img src="imagens/logo-adeona.png" alt="Adeona Receptivo" class="h-24 w-auto object-contain">
+
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 font-sans font-semibold text-sm text-slate-600">
+                    <a href="#inicio" class="hover:text-brand-teal transition">Início</a>
+                    <a href="#diferenciais" class="hover:text-brand-teal transition">Nossa Van</a>
+                    <a href="#transfers" class="hover:text-brand-teal transition">Transfers</a>
+                    <a href="#passeios" class="hover:text-brand-teal transition">Passeios</a>
+                    <a href="#destinos" class="hover:text-brand-teal transition">Destinos</a>
+                    <a href="#faq" class="hover:text-brand-teal transition">Dúvidas</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                        target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white font-sans font-bold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition duration-200 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Solicitar Orçamento</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-slate-700 hover:text-brand-teal p-2 focus:outline-none"
+                    aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 font-sans font-semibold">
+            <a href="#inicio" class="block py-2 text-slate-700 hover:text-brand-teal">Início</a>
+            <a href="#diferenciais" class="block py-2 text-slate-700 hover:text-brand-teal">Nossa Van</a>
+            <a href="#transfers" class="block py-2 text-slate-700 hover:text-brand-teal">Transfers</a>
+            <a href="#passeios" class="block py-2 text-slate-700 hover:text-brand-teal">Passeios</a>
+            <a href="#destinos" class="block py-2 text-slate-700 hover:text-brand-teal">Destinos</a>
+            <a href="#faq" class="block py-2 text-slate-700 hover:text-brand-teal">Perguntas Frequentes</a>
+            <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                target="_blank"
+                class="w-full bg-green-500 hover:bg-green-600 text-white text-center font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow mt-4">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Orçamento via WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio"
+        class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center py-16 lg:py-24"
+        style="background-image: url('imagens/praias/maragogi2.png');">
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Main Title & Copy -->
+                <div class="lg:col-span-7 text-white text-center lg:text-left space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase text-brand-gold">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Receptivo Oficial em Pernambuco</span>
+                    </div>
+
+                    <h1 class="font-sans text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Transfer Recife para <span class="text-brand-gold">Porto de Galinhas</span>
+                    </h1>
+
+                    <p
+                        class="text-base sm:text-lg lg:text-xl text-slate-100 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Viaje com conforto, segurança e pontualidade com a <strong
+                            class="text-white font-semibold">Adeona Receptivo</strong>. Especialista em transporte do
+                        Aeroporto de Recife, passeios privativos e aluguel de van com motorista.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20transfer."
+                            target="_blank"
+                            class="bg-green-500 hover:bg-green-600 text-white font-sans font-bold text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition duration-200 flex items-center justify-center gap-3 group">
+                            <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                            <span>Solicitar Orçamento</span>
+                        </a>
+                        <a href="#destinos"
+                            class="bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-lg px-8 py-4 rounded-xl backdrop-blur-md border border-white/30 hover:border-white transition duration-200 flex items-center justify-center gap-2">
+                            <span>Conhecer Destinos</span>
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Trust Badges -->
+                    <div
+                        class="pt-6 grid grid-cols-3 gap-4 border-t border-white/20 text-center max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-sans font-bold text-xl sm:text-2xl text-white">100%</p>
+                            <p class="text-xs text-slate-200">Veículo Credenciado</p>
+                        </div>
+                        <div>
+                            <p class="font-sans font-bold text-xl sm:text-2xl text-white">Privativo</p>
+                            <p class="text-xs text-slate-200">Atendimento Exclusivo</p>
+                        </div>
+                        <div>
+                            <p class="font-sans font-bold text-xl sm:text-2xl text-white">24/7</p>
+                            <p class="text-xs text-slate-200">Suporte a Voos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Quote Calculator / Form Box -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-800">
+                        <div class="text-center mb-6">
+                            <span class="inline-block p-3 rounded-full bg-brand-tealLight text-brand-tealDark mb-2">
+                                <i class="fa-solid fa-calculator text-xl"></i>
+                            </span>
+                            <h2 class="font-sans text-xl font-bold text-brand-tealDark">Cotação Rápida de Transfer</h2>
+                            <p class="text-xs text-slate-500">Selecione e receba o valor instantâneo no WhatsApp</p>
+                        </div>
+
+                        <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4 text-left">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Origem</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-plane-departure absolute left-3 top-3.5 text-slate-400"></i>
+                                    <select id="origin" required=""
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-brand-teal focus:outline-none">
+                                        <option value="Aeroporto Internacional do Recife (REC)">Aeroporto do Recife
+                                            (REC)</option>
+                                        <option value="Hotel/Pousada em Recife">Hotel / Pousada em Recife</option>
+                                        <option value="Porto de Galinhas">Porto de Galinhas</option>
+                                        <option value="Outra Localização">Outro local em PE</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Destino
+                                    Principal</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-location-dot absolute left-3 top-3.5 text-slate-400"></i>
+                                    <select id="destination" required=""
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-brand-teal focus:outline-none">
+                                        <option value="Porto de Galinhas / Muro Alto">Porto de Galinhas / Muro Alto
+                                        </option>
+                                        <option value="Praia dos Carneiros / Tamandaré">Praia dos Carneiros / Tamandaré
+                                        </option>
+                                        <option value="Maragogi (AL)">Maragogi (Caribe Brasileiro)</option>
+                                        <option value="City Tour Recife / Olinda">City Tour Recife e Olinda</option>
+                                        <option value="Outro Destino">Outro Destino Privativo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label
+                                        class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Passageiros</label>
+                                    <div class="relative">
+                                        <i class="fa-solid fa-users absolute left-3 top-3.5 text-slate-400"></i>
+                                        <select id="passengers"
+                                            class="w-full pl-10 pr-3 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-brand-teal focus:outline-none">
+                                            <option value="1 a 4 pessoas">1 a 4 pessoas</option>
+                                            <option value="5 a 8 pessoas">5 a 8 pessoas</option>
+                                            <option value="9 a 15 pessoas">9 a 15 pessoas (Van Completa)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Data
+                                        Prevista</label>
+                                    <input type="date" id="date" required=""
+                                        class="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-brand-teal focus:outline-none">
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-sans font-bold py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 mt-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Ver Valor no WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights / Fleet Specs Bar -->
+    <section id="diferenciais" class="bg-white py-12 border-b border-slate-100 shadow-sm relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brand-teal font-bold text-sm tracking-widest uppercase">Padrão Executivo</span>
+                <h2 class="font-sans text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Conforto e Segurança na
+                    Sua Viagem</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Nossa van executiva foi estruturada para
+                    proporcionar a melhor experiência de transporte no litoral de Pernambuco.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+                <!-- Spec 1 -->
+                <div
+                    class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-tealLight hover:shadow-md transition text-center group">
+                    <div
+                        class="w-12 h-12 mx-auto rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl mb-3 group-hover:bg-brand-teal group-hover:text-white transition">
+                        <i class="fa-solid fa-chair"></i>
+                    </div>
+                    <h3 class="font-sans font-bold text-slate-800 text-sm sm:text-base">15 Lugares</h3>
+                    <p class="text-xs text-slate-500 mt-1">Espaço ideal para sua família ou grupo</p>
+                </div>
+
+                <!-- Spec 2 -->
+                <div
+                    class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-tealLight hover:shadow-md transition text-center group">
+                    <div
+                        class="w-12 h-12 mx-auto rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl mb-3 group-hover:bg-brand-teal group-hover:text-white transition">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="font-sans font-bold text-slate-800 text-sm sm:text-base">Ar-Condicionado</h3>
+                    <p class="text-xs text-slate-500 mt-1">Climatização forte e agradável</p>
+                </div>
+
+                <!-- Spec 3 -->
+                <div
+                    class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-tealLight hover:shadow-md transition text-center group">
+                    <div
+                        class="w-12 h-12 mx-auto rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl mb-3 group-hover:bg-brand-teal group-hover:text-white transition">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="font-sans font-bold text-slate-800 text-sm sm:text-base">Poltronas Reclináveis</h3>
+                    <p class="text-xs text-slate-500 mt-1">Conforto máximo na viagem</p>
+                </div>
+
+                <!-- Spec 4 -->
+                <div
+                    class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-tealLight hover:shadow-md transition text-center group">
+                    <div
+                        class="w-12 h-12 mx-auto rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl mb-3 group-hover:bg-brand-teal group-hover:text-white transition">
+                        <i class="fa-solid fa-door-open"></i>
+                    </div>
+                    <h3 class="font-sans font-bold text-slate-800 text-sm sm:text-base">Porta Automática</h3>
+                    <p class="text-xs text-slate-500 mt-1">Praticidade no embarque/desembarque</p>
+                </div>
+
+                <!-- Spec 5 -->
+                <div
+                    class="col-span-2 md:col-span-1 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-tealLight hover:shadow-md transition text-center group">
+                    <div
+                        class="w-12 h-12 mx-auto rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl mb-3 group-hover:bg-brand-teal group-hover:text-white transition">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="font-sans font-bold text-slate-800 text-sm sm:text-base">100% Regulamentado</h3>
+                    <p class="text-xs text-slate-500 mt-1">Veículo credenciado e legalizado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transfer Section Details -->
+    <section id="transfers" class="py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-6 space-y-6">
+                    <span
+                        class="inline-block bg-brand-tealLight text-brand-tealDark font-bold text-xs uppercase px-3 py-1 rounded-full tracking-wider">
+                        Atendimento Pontual
+                    </span>
+                    <h2 class="font-sans text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Transfer do Aeroporto de Recife para Porto de Galinhas
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        A sua viagem começa no momento em que você desembarca. Por isso, escolher um transfer confiável
+                        do Aeroporto de Recife para Porto de Galinhas faz toda a diferença na sua experiência de férias.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        A <strong class="text-slate-800">Adeona Receptivo</strong> oferece transfer privativo em van
+                        executiva com motorista profissional, garantindo pontualidade, segurança e conforto durante todo
+                        o percurso.
+                    </p>
+
+                    <!-- Bullet Feature Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div
+                            class="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-green-100 text-green-600 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-slate-800 text-sm">Aeroporto, Hotéis & Pousadas</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Atendimento pontual na chegada ou saída do seu
+                                    voo.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-green-100 text-green-600 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-slate-800 text-sm">Resorts da Região</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Serviço completo para resorts em Muro Alto e
+                                    Cupe.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-green-100 text-green-600 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-slate-800 text-sm">Transfers Personalizados</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Roteiros sob medida para famílias, grupos e
+                                    eventos.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-green-100 text-green-600 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-slate-800 text-sm">Monitoramento de Voos</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Acompanhamos seu voo para ajustar atrasos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20meu%20transfer%20do%20Aeroporto%20para%20Porto%20de%20Galinhas."
+                            target="_blank"
+                            class="inline-flex items-center gap-3 bg-brand-teal hover:bg-brand-tealDark text-white font-sans font-bold px-6 py-3.5 rounded-xl shadow-lg transition">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Agendar Transfer Privativo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Card Layout -->
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <!-- Decorative background element -->
+                        <div
+                            class="absolute -inset-2 bg-gradient-to-r from-brand-teal to-brand-gold rounded-3xl blur opacity-20">
+                        </div>
+
+                        <div
+                            class="relative bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100 space-y-6">
+                            <div class="aspect-video w-full rounded-2xl overflow-hidden relative shadow-inner">
+                                <img src="imagens/praias/porto-galinhas-5.jpg" alt="Porto de Galinhas"
+                                    class="w-full h-full object-cover">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                    <span class="text-white font-sans font-bold text-lg">Praia de Porto de
+                                        Galinhas</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h3 class="font-sans font-bold text-lg text-slate-800 border-b border-slate-100 pb-2">
+                                    Como Funciona Nosso Transfer?</h3>
+
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                                        <p class="text-slate-600"><strong class="text-slate-800">Recepção no
+                                                Desembarque:</strong> Nosso motorista estará aguardando com
+                                            identificação no terminal de desembarque.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                                        <p class="text-slate-600"><strong class="text-slate-800">Embarque Rápido &
+                                                Seguro:</strong> Auxílio com bagagens e acomodação confortável na van
+                                            executiva.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                                        <p class="text-slate-600"><strong class="text-slate-800">Viagem Direta:</strong>
+                                            Trajeto sem paradas desnecessárias diretamente para a porta da sua
+                                            hospedagem.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Passeios Privativos Grid Section -->
+    <section id="passeios" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-bold text-sm tracking-widest uppercase">Experiências Exclusivas</span>
+                <h2 class="font-sans text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Passeios Privativos em
+                    Pernambuco e Alagoas</h2>
+                <p class="text-slate-600 mt-3 text-base">
+                    Além do transfer, viva momentos inesquecíveis conhecendo as praias e pontos turísticos mais bonitos
+                    do Nordeste com total privacidade para sua família.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Tour Card 1 -->
+                <div
+                    class="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col group bg-white">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="imagens/praias/recife.png" alt="Recife e Olinda"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-tealDark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">Cultural
+                            & Histórico</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3
+                                class="font-sans font-bold text-xl text-slate-800 group-hover:text-brand-teal transition">
+                                CITY TOUR RECIFE E OLINDA</h3>
+                            <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mt-1 mb-3">Cultura
+                                e história do Nordeste</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Explore o centro histórico de Olinda, o Recife Antigo, a Feirinha de Artesanato e
+                                descubra a riqueza cultural da região.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-100 mt-6">
+                            <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Tenho%20interesse%20no%20City%20Tour%20Recife%20e%20Olinda."
+                                target="_blank"
+                                class="w-full bg-slate-100 hover:bg-brand-teal hover:text-white text-slate-700 font-sans font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                                <span>Consultar Passeio</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 2 -->
+                <div
+                    class="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col group bg-white">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="imagens/praias/praia-carneiros-2.png" alt="Praia dos Carneiros"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-tealDark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">Paraíso
+                            Tropical</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3
+                                class="font-sans font-bold text-xl text-slate-800 group-hover:text-brand-teal transition">
+                                PRAIA DOS CARNEIROS</h3>
+                            <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mt-1 mb-3">Paraíso
+                                com águas calmas</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Coqueirais, a famosa Capelinha de São Benedito, passeios de catamarã e banho de argila
+                                em um cenário deslumbrante.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-100 mt-6">
+                            <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Passeio%20Praia%20dos%20Carneiros."
+                                target="_blank"
+                                class="w-full bg-slate-100 hover:bg-brand-teal hover:text-white text-slate-700 font-sans font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                                <span>Consultar Passeio</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 3 -->
+                <div
+                    class="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col group bg-white">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="imagens/praias/maragogi-1.png" alt="Maragogi"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-tealDark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">Imperdível</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3
+                                class="font-sans font-bold text-xl text-slate-800 group-hover:text-brand-teal transition">
+                                MARAGOGI</h3>
+                            <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mt-1 mb-3">Caribe
+                                Brasileiro</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Galés de águas azul-turquesa, mergulho com peixinhos e paisagens paradisíacas no litoral
+                                de Alagoas.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-100 mt-6">
+                            <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Passeio%20para%20Maragogi."
+                                target="_blank"
+                                class="w-full bg-slate-100 hover:bg-brand-teal hover:text-white text-slate-700 font-sans font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                                <span>Consultar Passeio</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 4 -->
+                <div
+                    class="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col group bg-white">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="imagens/praias/porto-galinhas-1.png" alt="Porto de Galinhas"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-tealDark/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">Mais
+                            Pedido</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3
+                                class="font-sans font-bold text-xl text-slate-800 group-hover:text-brand-teal transition">
+                                PORTO DE GALINHAS</h3>
+                            <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mt-1 mb-3">Piscinas
+                                Naturais Cristalinas</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Passeio de jangada, piscinas de águas transparentes, Pontal do Cupe, Muro Alto e a
+                                charmosa vila da praia.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-100 mt-6">
+                            <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Passeio%20em%20Porto%20de%20Galinhas."
+                                target="_blank"
+                                class="w-full bg-slate-100 hover:bg-brand-teal hover:text-white text-slate-700 font-sans font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                                <span>Consultar Passeio</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle & Fleet Feature Section -->
+    <section class="py-16 bg-gradient-to-br from-brand-tealDark to-brand-teal text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                <div class="lg:col-span-7 space-y-4">
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-xs font-semibold text-brand-gold">
+                        <i class="fa-solid fa-shield-halved"></i> Frota Legalizada
+                    </div>
+                    <h2 class="font-sans text-3xl sm:text-4xl font-extrabold">Van Executiva Confortável e Segura</h2>
+                    <p class="text-slate-100 text-base leading-relaxed">
+                        Trabalhamos com van executiva nova, totalmente credenciada e preparada para o transporte
+                        rodoviário de passageiros. Oferecemos uma experiência completa de tranquilidade para você e sua
+                        família durante toda a estadia em Pernambuco.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 text-sm font-semibold">
+                        <div class="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>Frota Higienizada</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>Motoristas Experientes</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>Espaço para Malas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 text-center lg:text-right">
+                    <div
+                        class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 inline-block text-left w-full">
+                        <h3 class="font-sans font-bold text-xl mb-4 text-brand-gold">Garantia Adeona Receptivo</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-brand-gold mt-1"></i>
+                                <span>Atendimento exclusivo e personalizado para grupos</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-brand-gold mt-1"></i>
+                                <span>Flexibilidade de horários pré-agendados</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-brand-gold mt-1"></i>
+                                <span>Segurança e credenciamento nos órgãos reguladores</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20van%20executiva."
+                            target="_blank"
+                            class="mt-6 block text-center w-full bg-brand-gold hover:bg-amber-500 text-slate-900 font-sans font-bold py-3 rounded-xl transition shadow">
+                            Falar com Atendente
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinos Atendidos Section -->
+    <section id="destinos" class="py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-teal font-bold text-sm tracking-widest uppercase">Cobertura Completa</span>
+                <h2 class="font-sans text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Destinos Atendidos pela
+                    Adeona Receptivo</h2>
+                <p class="text-slate-600 mt-2 text-base">
+                    Realizamos transfer e passeios nas principais praias e cidades do litoral do Nordeste.
+                </p>
+            </div>
+
+            <!-- Destinations Interactive Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Destino 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-sans font-bold text-lg text-slate-800">Recife</h3>
+                            <p class="text-xs text-brand-teal font-semibold">Aeroporto Internacional & Hotéis</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mt-3">Recepção no desembarque e transfer para a rede hoteleira da
+                        capital pernambucana.</p>
+                </div>
+
+                <!-- Destino 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-sans font-bold text-lg text-slate-800">Porto de Galinhas</h3>
+                            <p class="text-xs text-brand-teal font-semibold">Piscinas Naturais & Vila</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mt-3">O principal destino de Pernambuco com traslado direto até sua
+                        pousada ou resort.</p>
+                </div>
+
+                <!-- Destino 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-[#0088A8] fa-water"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-sans font-bold text-lg text-slate-800">Tamandaré e Ipojuca</h3>
+                            <p class="text-xs text-brand-teal font-semibold">Região do Litoral Sul</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mt-3">Atendimento completo para praias e condomínios fechados em
+                        todo o litoral.</p>
+                </div>
+
+                <!-- Destino 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-sans font-bold text-lg text-slate-800">Maragogi</h3>
+                            <p class="text-xs text-brand-teal font-semibold">Caribe Brasileiro em Alagoas</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mt-3">Transporte privativo confortável para o litoral norte de
+                        Alagoas.</p>
+                </div>
+
+                <!-- Destino 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-sans font-bold text-lg text-slate-800">Praia dos Carneiros</h3>
+                            <p class="text-xs text-brand-teal font-semibold">Paraíso Tropical</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mt-3">Um dos destinos mais paradisíacos do Brasil com coqueirais e
+                        mar calmo.</p>
+                </div>
+
+                <!-- Destino 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-tealLight text-brand-teal flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-sans font-bold text-lg text-slate-800">Olinda</h3>
+                            <p class="text-xs text-brand-teal font-semibold">Patrimônio Histórico</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mt-3">Ladeiras históricas, igrejas seculares e vista panorâmica
+                        inesquecível.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-teal font-bold text-sm tracking-widest uppercase">Tire Suas Dúvidas</span>
+                <h2 class="font-sans text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Perguntas Frequentes sobre
+                    Transfer em Recife</h2>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4">
+
+                <!-- Question 1 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition">
+                    <button onclick="toggleFaq(1)"
+                        class="w-full px-6 py-4 text-left font-sans font-bold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition focus:outline-none">
+                        <span>Quanto custa o transfer Recife para Porto de Galinhas?</span>
+                        <i id="faq-icon-1"
+                            class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-answer-1"
+                        class="hidden px-6 py-4 bg-white text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        O valor do transfer varia de acordo com o número de passageiros e o tipo de serviço (privativo
+                        na van executiva). Entre em contato via WhatsApp para receber um orçamento personalizado e sem
+                        compromisso em poucos minutos.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition">
+                    <button onclick="toggleFaq(2)"
+                        class="w-full px-6 py-4 text-left font-sans font-bold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition focus:outline-none">
+                        <span>Quanto tempo leva do aeroporto até Porto de Galinhas?</span>
+                        <i id="faq-icon-2"
+                            class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-answer-2"
+                        class="hidden px-6 py-4 bg-white text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        O percurso do Aeroporto Internacional do Recife até Porto de Galinhas leva em média de 50
+                        minutos a 1 hora e 10 minutos, dependendo do trânsito e da localização exata do seu hotel ou
+                        resort.
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition">
+                    <button onclick="toggleFaq(3)"
+                        class="w-full px-6 py-4 text-left font-sans font-bold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition focus:outline-none">
+                        <span>O transfer é privativo?</span>
+                        <i id="faq-icon-3"
+                            class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-answer-3"
+                        class="hidden px-6 py-4 bg-white text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Sim! Trabalhamos com atendimento privativo. A van executiva atende exclusivamente você, sua
+                        família ou seu grupo, garantindo maior rapidez, conforto e horário flexível de acordo com seus
+                        voos.
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden transition">
+                    <button onclick="toggleFaq(4)"
+                        class="w-full px-6 py-4 text-left font-sans font-bold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition focus:outline-none">
+                        <span>Vocês realizam passeios para Maragogi e Praia dos Carneiros?</span>
+                        <i id="faq-icon-4"
+                            class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-answer-4"
+                        class="hidden px-6 py-4 bg-white text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                        Sim, realizamos passeios privativos para os destinos mais famosos do Nordeste, incluindo
+                        Maragogi, Praia dos Carneiros, City Tour Recife e Olinda, além de passeios em Porto de Galinhas.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action Section -->
+    <section class="py-16 lg:py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-20"
+            style="background-image: url('imagens/praias/litoral-aereo.png');">
+        </div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <span
+                class="inline-block bg-brand-gold text-slate-900 font-bold text-xs uppercase px-4 py-1.5 rounded-full">Preciso
+                de Mais Informações</span>
+
+            <h2 class="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight">
+                Faça seu Orçamento de Transfer ou Passeio
+            </h2>
+
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+                Quer garantir um transfer seguro do Aeroporto de Recife para Porto de Galinhas ou agendar um passeio
+                privativo pelas praias mais bonitas do Nordeste?
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20atendente%20para%20solicitar%20meu%20or%C3%A7amento."
+                    target="_blank"
+                    class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-sans font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>FALE AGORA CONOSCO</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-brand-teal flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-van-shuttle text-sm"></i>
+                        </div>
+                        <span class="font-sans text-lg font-black text-white tracking-tight">ADEONA RECEPTIVO</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Empresa especializada em transfers e passeios turísticos privativos em Pernambuco e Alagoas.
+                        Transporte de passageiros com conforto, segurança e pontualidade.
+                    </p>
+                    <p class="text-slate-400 font-semibold text-xs">
+                        CNPJ: 18.260.755/0001-90 - RECIFE/PE
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="font-sans font-bold text-white text-sm uppercase tracking-wider mb-3">Links Rápido</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-white transition">Início</a></li>
+                        <li><a href="#diferenciais" class="hover:text-white transition">Nossa Van Executiva</a></li>
+                        <li><a href="#transfers" class="hover:text-white transition">Transfer Recife - Porto de
+                                Galinhas</a></li>
+                        <li><a href="#passeios" class="hover:text-white transition">Passeios Privativos</a></li>
+                        <li><a href="#faq" class="hover:text-white transition">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-2">
+                    <h4 class="font-sans font-bold text-white text-sm uppercase tracking-wider mb-3">Atendimento</h4>
+                    <p class="text-slate-400 text-xs">
+                        <i class="fa-solid fa-location-dot text-brand-teal mr-2"></i> Recife - Pernambuco - Brasil
+                    </p>
+                    <p class="text-slate-400 text-xs">
+                        <i class="fa-solid fa-clock text-brand-teal mr-2"></i> Atendimento 24 horas para transfers
+                        agendados
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Vim%20pelo%20site." target="_blank"
+                            class="inline-flex items-center gap-2 text-green-400 font-bold hover:underline">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Atendimento On-line via WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 text-center text-slate-400 text-xs">
+                <p>© 2026 Todos os direitos reservados a ADEONA RECEPTIVO - CNPJ: 18.260.755/0001-90 - RECIFE/PE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20transfer/passeio."
+        target="_blank" aria-label="Contato via WhatsApp"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition duration-300 transform hover:scale-110 whatsapp-pulse">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set default quote date to tomorrow
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                dateInput.value = tomorrow.toISOString().split('T')[0];
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Accordion for FAQ
+        function toggleFaq(index) {
+            const answer = document.getElementById(`faq-answer-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Quote Form Handler (Directs to WhatsApp with formatted message)
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const passengers = document.getElementById('passengers').value;
+            const date = document.getElementById('date').value;
+
+            // Formatar mensagem para o WhatsApp
+            const message = `*Solicitação de Cotação - Adeona Receptivo*%0A` +
+                `📍 *Origem:* ${origin}%0A` +
+                `🌴 *Destino:* ${destination}%0A` +
+                `👥 *Passageiros:* ${passengers}%0A` +
+                `📅 *Data Prevista:* ${date}%0A%0A` +
+                `Gostaria de saber o valor e disponibilidade!`;
+
+            window.open(`https://wa.me/5581999722028?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+
+</html>
