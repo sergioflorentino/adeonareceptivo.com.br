@@ -7,6 +7,20 @@
     <link rel="icon" href="https://www.adeonareceptivo.com.br/imagens/icon-adeona.jpg">
     <title>Adeona Receptivo | Transfer Recife para Porto de Galinhas & Passeios</title>
 
+    <!-- Google Tag Manager -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied'
+        });
+        gtag('js', new Date());
+    </script>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T78VT5QN"></script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +90,10 @@
 </head>
 
 <body class="font-body text-slate-700 bg-slate-50 antialiased selection:bg-brand-teal selection:text-white">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T78VT5QN" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
@@ -997,9 +1015,27 @@
 
             <div class="border-t border-slate-800 pt-6 text-center text-slate-400 text-xs">
                 <p>© 2026 Todos os direitos reservados a ADEONA RECEPTIVO - CNPJ: 18.260.755/0001-90 - RECIFE/PE</p>
+                <p class="mt-2">
+                    <a href="politica-de-privacidade.html" class="hover:text-white transition">Política de
+                        Privacidade</a>
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent"
+        class="hidden fixed bottom-4 left-4 right-24 md:right-auto md:max-w-md z-50 bg-white border border-slate-200 shadow-2xl rounded-2xl p-4 text-xs text-slate-600">
+        <p class="mb-3">Usamos cookies para medir acessos e melhorar sua experiência. Ao continuar, você concorda com a
+            <a href="politica-de-privacidade.html" class="text-brand-teal font-semibold hover:underline">Política de
+                Privacidade</a>.</p>
+        <div class="flex gap-2 justify-end">
+            <button type="button" data-consent="denied"
+                class="px-4 py-2 rounded-lg border border-slate-300 text-slate-600 font-semibold hover:bg-slate-100 transition">Recusar</button>
+            <button type="button" data-consent="granted"
+                class="px-4 py-2 rounded-lg bg-brand-teal text-white font-semibold hover:bg-brand-tealDark transition">Aceitar</button>
+        </div>
+    </div>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/5581999722028?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20transfer/passeio."
@@ -1065,8 +1101,116 @@
                 `📅 *Data Prevista:* ${date}%0A%0A` +
                 `Gostaria de saber o valor e disponibilidade!`;
 
+            if (window.adeonaTrack) {
+                window.adeonaTrack('quote_submit', {
+                    origin: origin,
+                    destination: destination,
+                    passengers: passengers,
+                    date: date
+                });
+            }
+
             window.open(`https://wa.me/5581999722028?text=${message}`, '_blank');
         }
+    </script>
+
+    <script>
+        (function () {
+            var ATTRIBUTION_KEY = 'adeona_attribution';
+            var CONSENT_KEY = 'adeona_consent';
+
+            function getParam(name) {
+                return new URLSearchParams(window.location.search).get(name);
+            }
+
+            function getAttribution() {
+                try {
+                    return JSON.parse(sessionStorage.getItem(ATTRIBUTION_KEY)) || {};
+                } catch (e) {
+                    return {};
+                }
+            }
+
+            function saveAttribution() {
+                var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+                var data = getAttribution();
+                var changed = false;
+                keys.forEach(function (key) {
+                    var value = getParam(key);
+                    if (value) {
+                        data[key] = value;
+                        changed = true;
+                    }
+                });
+                if (!data.landing_page) {
+                    data.landing_page = window.location.href;
+                    changed = true;
+                }
+                if (changed) {
+                    try { sessionStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(data)); } catch (e) { }
+                }
+                return data;
+            }
+
+            function track(name, params) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push(Object.assign({ event: name }, getAttribution(), params || {}));
+            }
+
+            function sectionOf(el) {
+                var section = el.closest('section');
+                if (section && section.id) return section.id;
+                if (el.closest('header')) return 'header';
+                if (el.closest('footer')) return 'footer';
+                return 'outros';
+            }
+
+            saveAttribution();
+            window.adeonaTrack = track;
+
+            document.addEventListener('click', function (event) {
+                var link = event.target.closest('a[href*="wa.me"]');
+                if (!link) return;
+                var message = '';
+                try {
+                    message = new URL(link.href).searchParams.get('text') || '';
+                } catch (e) { }
+                track('whatsapp_click', {
+                    link_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+                    section: sectionOf(link),
+                    message_text: message.slice(0, 200),
+                    page_location: window.location.href
+                });
+            }, true);
+
+            var banner = document.getElementById('cookie-consent');
+            var stored = null;
+            try { stored = localStorage.getItem(CONSENT_KEY); } catch (e) { }
+
+            function setConsent(value) {
+                try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { }
+                gtag('consent', 'update', {
+                    ad_storage: value,
+                    ad_user_data: value,
+                    ad_personalization: value,
+                    analytics_storage: value
+                });
+                if (banner) banner.classList.add('hidden');
+            }
+
+            if (stored === 'granted' || stored === 'denied') {
+                setConsent(stored);
+            } else if (banner) {
+                banner.classList.remove('hidden');
+            }
+
+            if (banner) {
+                var acceptBtn = banner.querySelector('[data-consent="granted"]');
+                var rejectBtn = banner.querySelector('[data-consent="denied"]');
+                if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent('granted'); });
+                if (rejectBtn) rejectBtn.addEventListener('click', function () { setConsent('denied'); });
+            }
+        })();
     </script>
 </body>
 
